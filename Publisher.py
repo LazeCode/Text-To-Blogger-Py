@@ -42,14 +42,14 @@ def fileSizeDefine(fileSize):
 # Attempt to creat database and tables if not exists.
 with conn:
     try:
-        c.execute(""" CREATE TABLE LeakedDatabases (DatabaseID INTEGER PRIMARY KEY, FileName TEXT, FileSize INTEGER, DateCreated TEXT, NumberOfLines INTEGER, LinesUploaded INTEGER, NumberOfParts INTEGER) """ )
+        c.execute(""" CREATE TABLE FilesUploaded (DatabaseID INTEGER PRIMARY KEY, FileName TEXT, FileSize INTEGER, DateCreated TEXT, NumberOfLines INTEGER, LinesUploaded INTEGER, NumberOfParts INTEGER) """ )
     except:
         pass
 
 # Check if Database file exists in Leaked DB List. If not then add.
 for DatabaseFile in os.listdir('FileToPublish/'):
     with conn:
-        c.execute("SELECT count(*) FROM LeakedDatabases WHERE FileName = ?", (DatabaseFile,))
+        c.execute("SELECT count(*) FROM FilesUploaded WHERE FileName = ?", (DatabaseFile,))
     if c.fetchone()[0] == 0:
         FileLocation = 'FileToPublish/' + DatabaseFile
         size = os.path.getsize(FileLocation)
@@ -59,14 +59,14 @@ for DatabaseFile in os.listdir('FileToPublish/'):
 
         # Insert scanned database files and metadata to SQL Database
         with conn:
-            c.execute("INSERT INTO LeakedDatabases (FileName, FileSize, DateCreated, NumberOfLines, LinesUploaded, NumberOfParts) VALUES (?,?,?,?,?,?)", (DatabaseFile, size, ctime, length, 0, 0,))
+            c.execute("INSERT INTO FilesUploaded (FileName, FileSize, DateCreated, NumberOfLines, LinesUploaded, NumberOfParts) VALUES (?,?,?,?,?,?)", (DatabaseFile, size, ctime, length, 0, 0,))
         print('\nDatabase File Added to DB. \n')
     else:
         pass
-        print('Database File Already Exists in DB. \n')
+        print('File Already Exists in DB. \n')
 
 # Add line breaks to each line and post to blogger
-SelectRows = c.execute("SELECT * FROM LeakedDatabases WHERE NumberOfLines <> LinesUploaded").fetchall()
+SelectRows = c.execute("SELECT * FROM FilesUploaded WHERE NumberOfLines <> LinesUploaded").fetchall()
 for EachDatabase in SelectRows:
     DatabaseID = EachDatabase[0]
     FileName = EachDatabase[1]
@@ -101,13 +101,13 @@ for EachDatabase in SelectRows:
 
             # Set number of parts count to database
             with conn:
-                c.execute("UPDATE LeakedDatabases SET NumberOfParts = ? WHERE DatabaseID = ?",(NumberOfParts, DatabaseID,))
+                c.execute("UPDATE FilesUploaded SET NumberOfParts = ? WHERE DatabaseID = ?",(NumberOfParts, DatabaseID,))
 
             print('Set Complete')
         LinesUploaded += lineCountsInLoop
 
     with conn:
-        c.execute("UPDATE LeakedDatabases SET LinesUploaded = ? WHERE DatabaseID = ?",(LinesUploaded, DatabaseID,))
+        c.execute("UPDATE FilesUploaded SET LinesUploaded = ? WHERE DatabaseID = ?",(LinesUploaded, DatabaseID,))
 
 
 # Print time taken for the task
