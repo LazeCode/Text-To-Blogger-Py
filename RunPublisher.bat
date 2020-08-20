@@ -1,0 +1,2 @@
+python LeakedPublisher.py
+pause
