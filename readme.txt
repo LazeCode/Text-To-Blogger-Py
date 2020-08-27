@@ -1,4 +1,7 @@
 This Python script allows you to upload files from a folder to blogger.
+Automatically uploades a set number of (10,000) lines per post from any text document to blogger blog.
+Automatically calculates the lines uploaded previously using an SQL database.
+Also calculates how many parts are there for each post (if the lines in the text file are larger than set 10,000 amount).
 
 Requirements:
 Python 3.8
