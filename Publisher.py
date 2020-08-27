@@ -39,7 +39,7 @@ def fileSizeDefine(fileSize):
     return fileSizeType
 # ------------------------------------------------------------------- #
 
-# Attempt to creat database and tables if not exists.
+# Attempt to create database and tables if not exists.
 with conn:
     try:
         c.execute(""" CREATE TABLE FilesUploaded (DatabaseID INTEGER PRIMARY KEY, FileName TEXT, FileSize INTEGER, DateCreated TEXT, NumberOfLines INTEGER, LinesUploaded INTEGER, NumberOfParts INTEGER) """ )
@@ -87,7 +87,7 @@ for EachDatabase in SelectRows:
                     pass
                 pass
             
-            # Set number of parts count
+            # Set number of parts counter
             NumberOfParts += 1
 
             # Blogger API Post Request
