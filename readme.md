@@ -39,4 +39,3 @@ google_auth_httplib2
 **NOTE** When selecting your application type in Step 4 of "Request an OAuth 2.0 client ID", please select "Other". There's also no need to carry out step 5 in that section.
 
 2. Download the credentials as client_id.json file and save it on the local folder containing this script.
-
