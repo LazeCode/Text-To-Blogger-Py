@@ -7,6 +7,7 @@ Also calculates how many parts are there for each post (if the lines in the text
 
 # Requirements:
 - Python 3.8
+### Python packages
 - pickle
 - google_auth_oauthlib.flow
 - googleapiclient.discovery
