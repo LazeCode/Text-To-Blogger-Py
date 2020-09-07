@@ -6,12 +6,12 @@ Automatically calculates the lines uploaded previously using an SQL database.
 Also calculates how many parts are there for each post (if the lines in the text file are larger than set 10,000 amount).
 
 # Requirements:
-Python 3.8
-pickle
-google_auth_oauthlib.flow
-googleapiclient.discovery
-google.auth.transport.requests
-google_auth_httplib2
+- Python 3.8
+- pickle
+- google_auth_oauthlib.flow
+- googleapiclient.discovery
+- google.auth.transport.requests
+- google_auth_httplib2
 
 # Setup
 ## Installing dependencies and running the script
