@@ -1,6 +1,6 @@
 
 # Scan Databases and Publish them to Blogger.
-# Created by https://github.com/Level9ine/
+# Created by https://github.com/LazeCode/
 
 import time, sqlite3, io, os, gzip, math
 from Config import BlogId, linesToUpload
