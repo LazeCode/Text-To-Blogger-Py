@@ -37,6 +37,6 @@ Also calculates how many parts are there for each post (if the lines in the text
 
 1. Obtain a Google Photos API key (Client ID and Client Secret) by following the instructions on [Getting started with Google Photos REST APIs](https://developers.google.com/photos/library/guides/get-started)
 
-**NOTE** When selecting your application type in Step 4 of "Request an OAuth 2.0 client ID", please select "Other". There's also no need to carry out step 5 in that section.
+**NOTE** When selecting your application type in Step 4 of "Request an OAuth 2.0 client ID", please select "Other".
 
-2. Download the credentials as client_id.json file and save it on the local folder containing this script.
+2. Download the credentials as client_secret.json file and save it on the local folder containing this script.
