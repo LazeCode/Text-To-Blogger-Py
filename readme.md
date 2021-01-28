@@ -33,9 +33,9 @@ Also calculates how many parts are there for each post (if the lines in the text
 6. Add the files to be uploaded to the folder "FileToPublish".
 7. To run on windows just run the RunPublisher.bat file or on mac run the "Publisher.py"
 
-## Obtaining a Google Photos API key
+## Obtaining a Google Blogger API key
 
-1. Obtain a Google Photos API key (Client ID and Client Secret) by following the instructions on [Getting started with Google Photos REST APIs](https://developers.google.com/photos/library/guides/get-started)
+1. Obtain a Google Blogger API key (Client ID and Client Secret) by following the instructions on [Getting started with Google Blogger REST APIs](https://developers.google.com/blogger/docs/3.0/using)
 
 **NOTE** When selecting your application type in Step 4 of "Request an OAuth 2.0 client ID", please select "Other".
 
