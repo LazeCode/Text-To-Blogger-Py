@@ -1,7 +1,7 @@
 # Text to Blogger Python Script
 
-This Python script allows you to upload multiple files (txt format) from a folder to blogger.
-Automatically uploades a set number of (10,000 default) lines per post from any text document to blogger blog.
+This Python script allows you to upload text from multiple files (txt format) within a folder to blogger.
+Automatically uploades a set number of (10,000 default) lines per post from any text document to a blogger blog.
 Automatically calculates the lines uploaded previously using an SQL database.
 Also calculates how many parts are there for each post (if the lines in the text file are larger than set 10,000 amount).
 
